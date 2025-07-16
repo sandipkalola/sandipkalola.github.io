@@ -1,9 +1,9 @@
 {
-  "forSaveDailyLogs":true,
-  "forEditPeriodData":false,
- "forDownloadImageForReport":true,
- "forDownloadPdfForReport":true,
- "forDownloadDrReport":true,
- "forCalculatorTools":true,
- "forSetReminders":true
+    "forSaveDailyLogs":true,
+    "forEditPeriodData":false,
+    "forDownloadImageForReport":true,
+    "forDownloadPdfForReport":true,
+    "forDownloadDrReport":true,
+    "forCalculatorTools":true,
+    "forSetReminders":true
 }
