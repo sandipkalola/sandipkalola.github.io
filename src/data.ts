@@ -1,4 +1,4 @@
-import { Project, Experience, Education, Certification, SkillGroup } from "./types";
+import { Project, Experience, Education, Certification, SkillGroup, TechGroup } from "./types";
 
 export const contactInfo = {
   name: "Sandipkumar Kalola",
@@ -16,13 +16,12 @@ export const contactInfo = {
 export const experiences: Experience[] = [
   {
     id: "exp-1",
-    role: "Co-Founder & Technical Lead – Flutter & AI",
+    role: "Technical Lead | Flutter & AI Solutions",
     company: "MeetMighty IT Solutions",
     type: "Full-time",
     duration: "Jan 2022 – Present",
     location: "Rajkot, Gujarat • On-site",
     bullets: [
-      "Co-founded and scaled MeetMighty from a two-person startup to a mobile-first software development company serving clients worldwide.",
       "Architected and delivered 30+ Flutter applications across iOS and Android covering taxi/ride-hailing, delivery, eCommerce, healthcare, and SaaS domains.",
       "Led and managed cross-functional teams of 20–25 developers, designers, and QA engineers across concurrent projects.",
       "Built AI automation pipelines using Gemini APIs and n8n, reducing manual client onboarding effort by ~60%.",
@@ -33,33 +32,22 @@ export const experiences: Experience[] = [
   },
   {
     id: "exp-2",
-    role: "Project Manager – Digital Solutions",
+    role: "Team Lead & Flutter Development",
     company: "Goldenmace IT Solutions",
     type: "Full-time",
-    duration: "Oct 2019 – Dec 2021",
+    duration: "Oct 2018 – Dec 2021",
     location: "Navsari, Gujarat • On-site",
     bullets: [
       "Led end-to-end delivery of multiple mobile and web projects simultaneously for a growing IT consultancy.",
       "Managed client relationships, cost estimations, timelines, and stakeholder expectations across 10+ concurrent engagements.",
-      "Introduced Flutter as the primary cross-platform framework, cutting development time by ~40%."
+      "Introduced Flutter as the primary cross-platform framework, cutting development time by ~40%.",
+      "I played a key role in shifting the company from native Android to Flutter, which helped us speed up development and deliver apps faster on both Android and iOS. I also trained the team and set up knowledge-sharing sessions to make the transition smooth.",
+      "Mentored junior developers and enforced code quality through regular code reviews."
     ],
-    skills: ["Client Coordination", "Project Planning", "Flutter", "Agile/Scrum"]
+    skills: ["Flutter", "Team Leadership", "Android", "Dart", "Cross-platform Development", "CI/CD", "Payment gateway Integration"]
   },
   {
     id: "exp-3",
-    role: "Team Lead – Mobile Development",
-    company: "Goldenmace IT Solutions",
-    type: "Full-time",
-    duration: "Apr 2018 – Sep 2019",
-    location: "Navsari, Gujarat • On-site",
-    bullets: [
-      "Led the Android development team and spearheaded migration from native Android to Flutter as the company's primary framework.",
-      "Mentored junior developers and enforced code quality through regular code reviews."
-    ],
-    skills: ["Flutter", "Team Leadership", "Android", "Dart", "Cross-platform Development"]
-  },
-  {
-    id: "exp-4",
     role: "Sr. Android Developer",
     company: "Goldenmace IT Solutions",
     type: "Full-time",
@@ -71,7 +59,7 @@ export const experiences: Experience[] = [
     skills: ["Android Development", "Java", "IoT Integration"]
   },
   {
-    id: "exp-5",
+    id: "exp-4",
     role: "Mobile Application Developer",
     company: "Pulse Solutions",
     type: "Full-time",
@@ -83,7 +71,7 @@ export const experiences: Experience[] = [
     skills: ["Android Development", "Mobile Application Development"]
   },
   {
-    id: "exp-6",
+    id: "exp-5",
     role: "Android Developer",
     company: "Idea To Working",
     type: "Full-time",
@@ -187,5 +175,116 @@ export const certifications: Certification[] = [
     id: "cert-3",
     name: "Prompt Engineering",
     issuer: "Google"
+  }
+];
+
+export const techGroups: TechGroup[] = [
+  {
+    category: "Flutter",
+    description: "Premium enterprise-grade commercial application templates and comprehensive UI kits published on CodeCanyon under MeetMighty, serving clients globally.",
+    items: [
+      {
+        id: "flut-1",
+        title: "Era Health - Period & Ovulation Tracker App",
+        description: "A secure, smart period, ovulation, and pregnancy tracking template integrated with customizable widgets and helpful AI-driven health tips.",
+        url: "https://codecanyon.net/item/era-health-smart-period-ovulation-pregnancy-tracker-app-menstrual-cycle-app-with-ai-tips/58856354",
+        badge: "CodeCanyon",
+        type: "codecanyon",
+        tags: ["Flutter", "Dart", "AI Tips", "Health Tech"]
+      },
+      {
+        id: "flut-2",
+        title: "MightyTaxi - Online Taxi Booking App",
+        description: "A comprehensive digital transportation suite comprising user, driver, and admin portals for automated requests, pricing calculations, and payment gateways.",
+        url: "https://codecanyon.net/item/mightytaxi-flutter-online-taxi-booking-app-taxi-app-admin-backend-driver-app/40977853",
+        badge: "CodeCanyon",
+        type: "codecanyon",
+        tags: ["Flutter", "Firebase", "Google Maps API", "Backend Service"]
+      },
+      {
+        id: "flut-3",
+        title: "MightyDelivery - Local Delivery System",
+        description: "On-demand local shipment tracker and courier delivery solution featuring route mapping, delivery proofing, and state synchronization.",
+        url: "https://codecanyon.net/item/mightydelivery-on-demand-local-delivery-system-flutter-app/37155035",
+        badge: "CodeCanyon",
+        type: "codecanyon",
+        tags: ["Flutter", "Geolocation", "Delivery Flow", "Real-time Update"]
+      },
+      {
+        id: "flut-4",
+        title: "MightyChat - Real-time Chat App",
+        description: "Feature-rich direct and channel messenger utilizing cloud Firestore backend combined with Agora SDK for audio & video calling streams.",
+        url: "https://codecanyon.net/item/mightychat-chat-app-with-firebase-backend-agoraio/31819316",
+        badge: "CodeCanyon",
+        type: "codecanyon",
+        tags: ["Flutter", "Firebase Firestore", "Agora.io", "Media Sharing"]
+      },
+      {
+        id: "flut-5",
+        title: "MightyStore - WooCommerce Universal App",
+        description: "A fast, production-ready mobile storefront connecting seamlessly with WooCommerce APIs for cart workflows, checkouts, and custom catalogs.",
+        url: "https://codecanyon.net/item/mightystore-woocommerce-universal-flutter-app-for-ecommerce-app/30218611",
+        badge: "CodeCanyon",
+        type: "codecanyon",
+        tags: ["Flutter", "WooCommerce API", "eCommerce State", "Stripe SDK"]
+      },
+      {
+        id: "flut-6",
+        title: "MightyProperty - Complete Real Estate Solution",
+        description: "A complete real estate portal equipped with advanced listing search matrices, Laravel admin workspace, and intelligent ChatGPT-integrated chatbot assistance.",
+        url: "https://codecanyon.net/item/mightyproperty-complete-real-estate-solution-flutter-app-with-laravel-backend-chatgptaichatbot/50846685",
+        badge: "CodeCanyon",
+        type: "codecanyon",
+        tags: ["Flutter", "Laravel Backend", "ChatGPT API", "Chat System"]
+      }
+    ]
+  },
+  {
+    category: "AI Development",
+    description: "Cutting-edge tools and frameworks integrating deep artificial intelligence models, computer vision, and career heuristic analysis.",
+    items: [
+      {
+        id: "ai-1",
+        title: "EdgeAttend-AI",
+        description: "An advanced, local-first artificial intelligence attendance and verification ecosystem designed to perform facial pattern recognition at extreme edges with high accuracy.",
+        url: "https://github.com/sandipkalola/EdgeAttend-AI",
+        badge: "GitHub",
+        type: "github",
+        tags: ["AI Modeling", "Face Recognition", "Edge Computing", "Python/Rust"]
+      },
+      {
+        id: "ai-2",
+        title: "Career-Analyzer-AI",
+        description: "An intelligent generative artificial intelligence engine that assesses resumes, detects matching career trajectories, and formulates customized roadmap advice instantly.",
+        url: "https://github.com/sandipkalola/Career-Analyzer-AI",
+        badge: "GitHub",
+        type: "github",
+        tags: ["Gemini API", "Resume Parsing", "Vector Search", "LLM Consulting"]
+      }
+    ]
+  },
+  {
+    category: "WhatsApp Automation",
+    description: "In-depth video walkthroughs and implementations showcasing automated messaging models, API workflows, and robust customer lead gen systems.",
+    items: [
+      {
+        id: "wa-1",
+        title: "AI-Powered WhatsApp Bot & Flow Demonstration",
+        description: "A comprehensive video demonstration showcasing automated web and app flows using custom trigger nodes, WhatsApp Business APIs, and natural conversation models.",
+        url: "https://www.youtube.com/watch?v=nxi2aU_ayYI",
+        badge: "YouTube",
+        type: "youtube",
+        tags: ["WhatsApp Cloud API", "n8n Automation", "Chatbot UI", "Video Demo"]
+      },
+      {
+        id: "wa-2",
+        title: "Advanced WhatsApp Marketing Flow & CRM Integration",
+        description: "Step-by-step video guide proving successful integrations between incoming message pipelines, customer lead scoring filters, and auto-reply setups.",
+        url: "https://www.youtube.com/watch?v=Pse8SWDccR8",
+        badge: "YouTube",
+        type: "youtube",
+        tags: ["Webhooks", "Lead Generation", "CRM Hooks", "Tutorial UI"]
+      }
+    ]
   }
 ];

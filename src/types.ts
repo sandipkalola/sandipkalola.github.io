@@ -40,6 +40,22 @@ export interface SkillGroup {
   skills: string[];
 }
 
+export interface TechProjectItem {
+  id: string;
+  title: string;
+  description: string;
+  url: string;
+  badge?: string;
+  type: "codecanyon" | "github" | "youtube";
+  tags: string[];
+}
+
+export interface TechGroup {
+  category: string;
+  description: string;
+  items: TechProjectItem[];
+}
+
 export interface ChatMessage {
   id: string;
   role: "user" | "model";

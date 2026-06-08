@@ -23,9 +23,11 @@ import {
   Workflow,
   Search,
   CheckCircle,
-  Clock
+  Clock,
+  Smartphone,
+  Youtube
 } from "lucide-react";
-import { experiences, skillGroups, projects, educationList, certifications, contactInfo } from "./data";
+import { experiences, skillGroups, projects, educationList, certifications, contactInfo, techGroups } from "./data";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -481,6 +483,117 @@ export default function App() {
 
               </div>
             ))}
+          </div>
+
+          {/* TECHNOLOGY-WISE ECOSYSTEM */}
+          <div className="mt-24 pt-16 border-t border-white/10">
+            <div className="max-w-3xl mb-12">
+              <span className="text-[10px] uppercase tracking-[0.25em] text-[#FF4F00] font-bold mb-2 block">
+                03B / TECHNOLOGY ECOSYSTEM
+              </span>
+              <h3 className="font-display font-bold text-3xl text-white tracking-tight">
+                Product Ecosystem & Codebases By Technology
+              </h3>
+              <p className="text-sm text-white/55 mt-2">
+                A structured ledger of published mobile templates, artificial intelligence repositories, and custom messaging automation channels.
+              </p>
+              <div className="w-12 h-1 bg-[#FF4F00] rounded-full mt-3"></div>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              {techGroups.map((group, groupIdx) => {
+                let badgeColor = "text-[#FF4F00] bg-[#FF4F00]/10 border-[#FF4F00]/20";
+                if (group.category === "WhatsApp Automation") {
+                  badgeColor = "text-[#FF4F00] bg-[#FF4F00]/10 border-[#FF4F00]/20";
+                }
+
+                return (
+                  <div key={groupIdx} className="space-y-6 flex flex-col h-full">
+                    
+                    {/* Column Group Header */}
+                    <div className="p-6 bg-[#111111]/60 border border-white/5 rounded-3xl space-y-3">
+                      <div className="flex justify-between items-center">
+                        <div className="p-2.5 bg-[#FF4F00]/10 text-[#FF4F00] rounded-xl font-bold">
+                          {group.category === "Flutter" && <Smartphone size={18} />}
+                          {group.category === "AI Development" && <Cpu size={18} />}
+                          {group.category === "WhatsApp Automation" && <Workflow size={18} />}
+                        </div>
+                        <span className={`text-[10px] font-mono px-2.5 py-1 rounded-full border ${badgeColor}`}>
+                          {group.items.length} {group.category === "Flutter" ? "Apps" : group.category === "AI Development" ? "Repos" : "Videos"}
+                        </span>
+                      </div>
+                      <div>
+                        <h4 className="font-display font-medium text-lg text-white">
+                          {group.category}
+                        </h4>
+                        <p className="text-xs text-white/55 mt-1 leading-relaxed">
+                          {group.description}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Stack of Cards */}
+                    <div className="space-y-4 flex-grow flex flex-col justify-start">
+                      {group.items.map((item) => (
+                        <div 
+                          key={item.id} 
+                          className="p-5 bg-[#111111] border border-white/10 hover:border-[#FF4F00]/30 rounded-2xl flex flex-col justify-between space-y-4 transition-all hover:bg-[#111111]/80 hover:shadow-lg"
+                        >
+                          <div className="space-y-2">
+                            <div className="flex justify-between items-center">
+                              <span className={`text-[8px] font-mono font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${
+                                item.type === "codecanyon" 
+                                  ? "bg-amber-500/10 border-amber-500/20 text-amber-500"
+                                  : item.type === "github"
+                                  ? "bg-slate-400/10 border-slate-400/20 text-slate-300"
+                                  : "bg-red-500/10 border-red-500/20 text-red-500"
+                              }`}>
+                                {item.badge}
+                              </span>
+                            </div>
+                            <h5 className="font-display font-semibold text-sm text-white hover:text-[#FF4F00] transition-colors leading-snug">
+                              {item.title}
+                            </h5>
+                            <p className="text-xs text-white/50 leading-relaxed font-sans">
+                              {item.description}
+                            </p>
+                          </div>
+
+                          <div className="space-y-3">
+                            {/* Tags */}
+                            <div className="flex flex-wrap gap-1">
+                              {item.tags.map((tag, tIdx) => (
+                                <span key={tIdx} className="text-[9px] font-mono bg-white/5 border border-white/10 text-white/40 px-1.5 py-0.5 rounded">
+                                  {tag}
+                                </span>
+                              ))}
+                            </div>
+
+                            {/* CTA Link Button */}
+                            <a 
+                              href={item.url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className={`w-full py-2.5 rounded-xl text-[10px] uppercase font-mono tracking-wider font-bold text-center flex items-center justify-center gap-1.5 transition-all outline-none border cursor-pointer ${
+                                item.type === "codecanyon"
+                                  ? "bg-[#FF4F00] text-black border-transparent hover:bg-orange-600 hover:text-black font-extrabold"
+                                  : "bg-white/5 border-white/11 hover:border-[#FF4F00]/40 text-white/80 hover:text-white"
+                              }`}
+                            >
+                              {item.type === "codecanyon" && "Buy Licence"}
+                              {item.type === "github" && "Explore Repository"}
+                              {item.type === "youtube" && "Watch Walkthrough"}
+                              <ArrowUpRight size={10} className="opacity-60" />
+                            </a>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                  </div>
+                );
+              })}
+            </div>
           </div>
 
         </div>
