@@ -167,15 +167,6 @@ export default function App() {
                   {copiedText === "email" ? "Copied Email!" : "sandipkalola1990@gmail.com"}
                   {copiedText !== "email" && <Copy size={11} className="opacity-40" />}
                 </button>
-                <button 
-                  onClick={() => copyToClipboard(contactInfo.phone, "phone")}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1a1a1a] hover:bg-white/5 border border-white/5 hover:border-white/10 text-xs text-white/80 font-mono cursor-pointer transition-all"
-                  title="Copy Phone"
-                >
-                  <Phone size={13} className="text-[#FF4F00]" />
-                  {copiedText === "phone" ? "Copied Phone!" : "+91 96384 72777"}
-                  {copiedText !== "phone" && <Copy size={11} className="opacity-40" />}
-                </button>
               </div>
 
               {/* Actions & Metrics unified */}

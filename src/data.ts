@@ -4,7 +4,6 @@ export const contactInfo = {
   name: "Sandipkumar Kalola",
   title: "Senior Flutter Developer | Flutter + AI Integration | Technical Lead",
   location: "Rajkot, Gujarat, India (Open to Remote / Hybrid)",
-  phone: "+91-9638472777",
   email: "sandipkalola1990@gmail.com",
   linkedin: "https://linkedin.com/in/sandip0919",
   linkedinDisplay: "linkedin.com/in/sandip0919",
