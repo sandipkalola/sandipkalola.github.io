@@ -140,6 +140,36 @@ export const projects: Project[] = [
     url: "https://reviewpilot.in/",
     category: "ai-automation",
     pinned: true
+  },
+  {
+    id: "proj-4",
+    title: "EdgeAttend-AI",
+    description: "An advanced, local-first artificial intelligence attendance and verification ecosystem designed to perform facial pattern recognition at extreme edges with high accuracy.",
+    longDescription: "EdgeAttend-AI addresses local-first high-speed verification challenges by utilizing lightweight deep facial embedding models. Engineered primarily to run at local edge-compute terminals, it provides lightning-fast user authentication, offline synchronizing capability, and highly secure biometric data processing with zero dependency on cloud roundtrips.",
+    skills: ["Facial Recognition", "Edge AI", "Computer Vision", "Python", "Local SQLite"],
+    url: "https://github.com/sandipkalola/EdgeAttend-AI",
+    category: "ai-automation",
+    pinned: true
+  },
+  {
+    id: "proj-5",
+    title: "Career-Analyzer-AI",
+    description: "An intelligent generative artificial intelligence engine that assesses resumes, detects matching career trajectories, and formulates customized roadmap advice instantly.",
+    longDescription: "Career-Analyzer-AI is built on top of high-level Gemini API configurations that parse structural and unstructured PDF resumes. By computing semantic alignment with active corporate requirements, it highlights skill gaps, suggests customized technical roadmaps, and optimizes general resume indexing scores to elevate candidate success.",
+    skills: ["Gemini API", "LLMs", "Resume Parsing", "Vector Search", "Prompt Engineering"],
+    url: "https://github.com/sandipkalola/Career-Analyzer-AI",
+    category: "ai-automation",
+    pinned: true
+  },
+  {
+    id: "proj-6",
+    title: "Auto LinkedIn Post via WhatsApp",
+    description: "An automated social media publishing pipeline that allows users to draft, enrich, and seamlessly publish professional LinkedIn posts directly through WhatsApp chats using AI agents.",
+    longDescription: "This advanced workflow automation enables instant content creation by connecting WhatsApp webhook triggers, custom n8n flows, and Gemini LLMs to the LinkedIn API. Users text a raw thought to a WhatsApp interface, and the AI agent automatically crafts trending tags, formats the prose, performs automated tone adjustment, and publishes the polished post live.",
+    skills: ["n8n Automation", "Gemini API", "WhatsApp Cloud API", "LinkedIn API", "Webhooks"],
+    url: "https://github.com/sandipkalola/Auto-LinkedIn-Post-via-whatsapp",
+    category: "ai-automation",
+    pinned: true
   }
 ];
 
@@ -283,6 +313,15 @@ export const techGroups: TechGroup[] = [
         badge: "YouTube",
         type: "youtube",
         tags: ["Webhooks", "Lead Generation", "CRM Hooks", "Tutorial UI"]
+      },
+      {
+        id: "wa-3",
+        title: "Auto LinkedIn Post via WhatsApp",
+        description: "An automated social media publishing codebase connecting incoming WhatsApp webhooks, custom n8n pipelines, and AI content formulation with the official LinkedIn API.",
+        url: "https://github.com/sandipkalola/Auto-LinkedIn-Post-via-whatsapp",
+        badge: "GitHub",
+        type: "github",
+        tags: ["WhatsApp Cloud API", "LinkedIn API", "n8n Automation", "Gemini API"]
       }
     ]
   }

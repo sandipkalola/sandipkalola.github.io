@@ -28,6 +28,8 @@ import {
   Youtube
 } from "lucide-react";
 import { experiences, skillGroups, projects, educationList, certifications, contactInfo, techGroups } from "./data";
+import { TiltCard } from "./components/TiltCard";
+import { motion } from "motion/react";
 
 export default function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -126,11 +128,18 @@ export default function App() {
       </header>
 
       {/* HERO SECTION */}
-      <section id="hero" className="relative pt-12 md:pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
+      <motion.section 
+        id="hero" 
+        className="relative pt-12 md:pt-20 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
           {/* Identity Card (Large Bento Cell) */}
-          <div className="lg:col-span-8 bg-[#111111] border border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between space-y-8">
+          <TiltCard className="lg:col-span-8 bg-[#111111] border border-white/10 rounded-3xl p-8 sm:p-10 flex flex-col justify-between space-y-8" intensity={6}>
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 bg-[#FF4F00]/10 border border-[#FF4F00]/20 text-[#FF4F00] rounded-full text-xs font-semibold shadow-inner font-mono tracking-wide">
                 <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
@@ -138,7 +147,7 @@ export default function App() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-light tracking-tighter text-white leading-[1.05]">
-                HI, I'M <span className="font-medium bg-gradient-to-r from-[#FF4F00] to-orange-500 bg-clip-text text-transparent">SANDIPKUMAR</span>.<br/>
+                HI, I'M <span className="font-medium bg-gradient-to-r from-[#FF4F00] to-orange-500 bg-clip-text text-transparent animate-pulse">SANDIPKUMAR</span>.<br/>
                 <span className="text-2xl sm:text-3xl md:text-4xl text-white/50 block mt-2 font-light">
                   Senior Flutter Architect
                 </span>
@@ -181,10 +190,10 @@ export default function App() {
                 </button>
               </div>
             </div>
-          </div>
+          </TiltCard>
 
           {/* Key Metrics Bento Cell on the right */}
-          <div className="lg:col-span-4 bg-[#111111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between">
+          <TiltCard className="lg:col-span-4 bg-[#111111] border border-white/10 rounded-3xl p-8 flex flex-col justify-between" intensity={8}>
             <div className="space-y-4">
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#FF4F00] font-bold block mb-2">METRICS</span>
               <h2 className="font-display font-semibold text-lg text-white leading-snug">Track Record</h2>
@@ -216,13 +225,20 @@ export default function App() {
                 <span className="font-mono text-3xl sm:text-4xl font-bold text-[#FF4F00]">25+</span>
               </div>
             </div>
-          </div>
+          </TiltCard>
 
         </div>
-      </section>
+      </motion.section>
 
       {/* DETAILED SUMMARY / ABOUT */}
-      <section id="summary" className="py-20 border-y border-white/10 bg-[#080808] px-4 sm:px-6 lg:px-8">
+      <motion.section 
+        id="summary" 
+        className="py-20 border-y border-white/10 bg-[#080808] px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         <div className="max-w-7xl mx-auto">
           
           <div className="max-w-3xl mb-12">
@@ -236,7 +252,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
             
             {/* Context narrative card */}
-            <div className="lg:col-span-5 p-8 bg-[#111111] border border-white/10 rounded-3xl flex flex-col justify-between">
+            <TiltCard className="lg:col-span-5 p-8 bg-[#111111] border border-white/10 rounded-3xl flex flex-col justify-between" intensity={5}>
               <p className="text-white/75 leading-relaxed text-sm sm:text-base">
                 With a robust background spanning software development, architectural scoping, and technical team leadership, I help enterprises convert complex concepts into user-centric cross-platform applications. 
                 <br /><br />
@@ -262,32 +278,32 @@ export default function App() {
                   GitHub
                 </a>
               </div>
-            </div>
+            </TiltCard>
 
             {/* Core Capability Pillars */}
             <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
               
-              <div className="p-6 bg-[#111111] border border-white/10 hover:border-[#FF4F00]/40 rounded-3xl transition-all group">
-                <div className="text-[#FF4F00] p-2 bg-[#FF4F00]/10 rounded-xl w-10 h-10 flex items-center justify-center mb-4 transition-transform group-hover:scale-105">
+              <TiltCard className="p-6 bg-[#111111] border border-white/10 rounded-3xl transition-all group" intensity={8}>
+                <div className="text-[#FF4F00] p-2 bg-[#FF4F00]/10 rounded-xl w-10 h-10 flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
                   <Cpu size={18} />
                 </div>
                 <h4 className="font-display font-semibold text-white text-base mb-2">Flutter & Dart Architect</h4>
                 <p className="text-xs text-white/50 leading-relaxed">
                   Decoupled BLoC & GetX architectures that sync complex state smoothly across millions of user clients.
                 </p>
-              </div>
+              </TiltCard>
 
-              <div className="p-6 bg-[#111111] border border-white/10 hover:border-[#FF4F00]/40 rounded-3xl transition-all group">
-                <div className="text-[#FF4F00] p-2 bg-[#FF4F00]/10 rounded-xl w-10 h-10 flex items-center justify-center mb-4 transition-transform group-hover:scale-105">
+              <TiltCard className="p-6 bg-[#111111] border border-white/10 rounded-3xl transition-all group" intensity={8}>
+                <div className="text-[#FF4F00] p-2 bg-[#FF4F00]/10 rounded-xl w-10 h-10 flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
                   <Workflow size={18} />
                 </div>
                 <h4 className="font-display font-semibold text-white text-base mb-2">AI Automation Engineer</h4>
                 <p className="text-xs text-white/50 leading-relaxed">
                   Authoring server-side pipelines with Gemini API, n8n, nlp algorithms, and custom agents for robust business scaling.
                 </p>
-              </div>
+              </TiltCard>
 
-              <div className="p-6 bg-[#111111] border border-[#FF4F00]/20 hover:border-[#FF4F05]/60 hover:bg-[#1a1a1a]/40 rounded-3xl transition-all group">
+              <TiltCard className="p-6 bg-[#111111] border border-[#FF4F00]/20 rounded-3xl transition-all group" intensity={8}>
                 <div className="text-black p-2 bg-[#FF4F00] rounded-xl w-10 h-10 flex items-center justify-center mb-4">
                   <Users size={18} />
                 </div>
@@ -295,27 +311,34 @@ export default function App() {
                 <p className="text-xs text-white/55 leading-relaxed">
                   Steering concurrent teams of up to 25 engineers through complex deliverables using Agile methodology.
                 </p>
-              </div>
+              </TiltCard>
 
-              <div className="p-6 bg-[#111111] border border-white/10 hover:border-[#FF4F00]/40 rounded-3xl transition-all group">
-                <div className="text-[#FF4F00] p-2 bg-[#FF4F00]/10 rounded-xl w-10 h-10 flex items-center justify-center mb-4 transition-transform group-hover:scale-105">
+              <TiltCard className="p-6 bg-[#111111] border border-white/10 rounded-3xl transition-all group" intensity={8}>
+                <div className="text-[#FF4F00] p-2 bg-[#FF4F00]/10 rounded-xl w-10 h-10 flex items-center justify-center mb-4 transition-transform group-hover:scale-110">
                   <Layers size={18} />
                 </div>
                 <h4 className="font-display font-semibold text-white text-base mb-2">Full-Product Delivery</h4>
                 <p className="text-xs text-white/50 leading-relaxed">
                   Managing complete specs, timeline estimations, client feedback, and publishing securely onto App & Play Stores.
                 </p>
-              </div>
+              </TiltCard>
 
             </div>
 
           </div>
 
         </div>
-      </section>
+      </motion.section>
 
       {/* CORE SKILLS SECTION */}
-      <section id="skills" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section 
+        id="skills" 
+        className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         
         <div className="max-w-3xl mb-12">
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#FF4F00] font-bold mb-2 block">02 / EXPERTISE</span>
@@ -359,10 +382,17 @@ export default function App() {
           ))}
         </div>
 
-      </section>
+      </motion.section>
 
       {/* OPEN SOURCE & FEATURED PROJECTS */}
-      <section id="projects" className="py-20 bg-[#080808] border-y border-white/10 px-4 sm:px-6 lg:px-8">
+      <motion.section 
+        id="projects" 
+        className="py-20 bg-[#080808] border-y border-white/10 px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         <div className="max-w-7xl mx-auto">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
@@ -403,9 +433,10 @@ export default function App() {
           {/* Project Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((proj) => (
-              <div 
+              <TiltCard 
                 key={proj.id} 
-                className="bg-[#111111] border border-white/10 hover:border-[#FF4F00]/40 rounded-3xl overflow-hidden flex flex-col justify-between hover:shadow-xl transition-all"
+                className="bg-[#111111] border border-white/10 rounded-3xl overflow-hidden flex flex-col justify-between transition-all"
+                intensity={8}
               >
                 
                 {/* Upper banner section of project card based on category */}
@@ -472,7 +503,7 @@ export default function App() {
                   )}
                 </div>
 
-              </div>
+              </TiltCard>
             ))}
           </div>
 
@@ -526,9 +557,10 @@ export default function App() {
                     {/* Stack of Cards */}
                     <div className="space-y-4 flex-grow flex flex-col justify-start">
                       {group.items.map((item) => (
-                        <div 
+                        <TiltCard 
                           key={item.id} 
-                          className="p-5 bg-[#111111] border border-white/10 hover:border-[#FF4F00]/30 rounded-2xl flex flex-col justify-between space-y-4 transition-all hover:bg-[#111111]/80 hover:shadow-lg"
+                          className="p-5 bg-[#111111] border border-white/10 rounded-2xl flex flex-col justify-between space-y-4 transition-all"
+                          intensity={10}
                         >
                           <div className="space-y-2">
                             <div className="flex justify-between items-center">
@@ -577,7 +609,7 @@ export default function App() {
                               <ArrowUpRight size={10} className="opacity-60" />
                             </a>
                           </div>
-                        </div>
+                        </TiltCard>
                       ))}
                     </div>
 
@@ -588,10 +620,17 @@ export default function App() {
           </div>
 
         </div>
-      </section>
+      </motion.section>
 
       {/* DETAILED CHRONOLOGICAL EXPERIENCE TIMELINE */}
-      <section id="timeline" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.section 
+        id="timeline" 
+        className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         
         <div className="max-w-3xl mb-12">
           <span className="text-[10px] uppercase tracking-[0.25em] text-[#FF4F00] font-bold mb-2 block">04 / EXPERIENCE</span>
@@ -667,10 +706,17 @@ export default function App() {
 
         </div>
 
-      </section>
+      </motion.section>
 
       {/* EDUCATION & CERTIFICATIONS SUMMARY */}
-      <section id="education" className="py-20 bg-[#080808] border-y border-white/10 px-4 sm:px-6 lg:px-8">
+      <motion.section 
+        id="education" 
+        className="py-20 bg-[#080808] border-y border-white/10 px-4 sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: 35 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      >
         <div className="max-w-7xl mx-auto">
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
@@ -742,7 +788,7 @@ export default function App() {
           </div>
 
         </div>
-      </section>
+      </motion.section>
 
 
 
