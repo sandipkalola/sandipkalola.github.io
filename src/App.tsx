@@ -30,8 +30,46 @@ import {
 import { experiences, skillGroups, projects, educationList, certifications, contactInfo, techGroups } from "./data";
 import { TiltCard } from "./components/TiltCard";
 import { motion } from "motion/react";
+import { TermsOfService, PrivacyPolicy, CancellationRefundPolicy } from "./components/Legals";
 
 export default function App() {
+  // Simple client-side routing
+  const [currentPath, setCurrentPath] = useState(() => {
+    const path = window.location.pathname.replace(/\/$/, "");
+    return path || "/";
+  });
+
+  React.useEffect(() => {
+    const handlePopState = () => {
+      const path = window.location.pathname.replace(/\/$/, "");
+      setCurrentPath(path || "/");
+    };
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const navigateTo = (path: string) => {
+    window.history.pushState({}, "", path);
+    setCurrentPath(path);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const isPath = (pathSuffix: string) => {
+    return currentPath === pathSuffix || currentPath.endsWith("/" + pathSuffix) || currentPath.endsWith(pathSuffix);
+  };
+
+  if (isPath("terms-of-service")) {
+    return <TermsOfService onBack={() => navigateTo("/")} />;
+  }
+
+  if (isPath("privacy-policy")) {
+    return <PrivacyPolicy onBack={() => navigateTo("/")} />;
+  }
+
+  if (isPath("cancellation-refund-policy")) {
+    return <CancellationRefundPolicy onBack={() => navigateTo("/")} />;
+  }
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copiedText, setCopiedText] = useState("");
   const [activeCategory, setActiveCategory] = useState<string>("all");
